@@ -18,19 +18,23 @@ public class testFullName {
 		
 
 		str1 =  myAvgPerson.getFirstName();
-		System.out.println(str1);		
+		System.out.println(str1);	
+		assertNotNull(str1);
+		
 		str2 =  myAvgPerson.getLastName();
 		System.out.println(str2);
+		assertNotNull(str1);
 		
 		str2 =  myAvgPerson.getGender();
 		System.out.println(str2);	
-		
+		assertNotNull(str1);		
 		
 		str2 = Integer.toString(myAvgPerson.getAge());
 		System.out.println(str2);
+		assertNotNull(str1);		
 		
+		//fail("Not yet implemented");
 		
-		fail("Not yet implemented");
 	}
 
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class averagePerson {
 
-	private String firstName,lastName,gender,addressLine1,addressLine2,addressCity,addressPostCode,email;
+	private String firstName,lastName,gender,addressLine1,addressLine2,addressCity,addressState,addressPostCode,email;
 	private int age,creditCardCVV;
 	private String creditCardNumber, creditCardType;
 	
@@ -15,7 +15,7 @@ public class averagePerson {
 	
 	private String[] arr_Streets = new String[812];
 	
-	private String[][] arr_SuburbAndPostCodes = new String[25][2];
+	private String[][] arr_SuburbAndPostCodes = new String[25][3];
 	
 	//constructor
 	public averagePerson() {
@@ -38,7 +38,7 @@ public class averagePerson {
 	
 	
 	public String getFullAddressIn3Lines() {
-		String sAddress = addressLine1 + "  " + addressLine2 + "\r\n" + addressCity + " VIC" +"\r\n" + addressPostCode;
+		String sAddress = addressLine1 + "  " + addressLine2 + "\r\n" + addressCity + "  "  + addressState +"\r\n" + addressPostCode;
 		return sAddress;
 	}//end getFullAddress;
 		
@@ -68,6 +68,7 @@ public class averagePerson {
 		rNum = myRandom.nextInt(24); // refresh value for Suburb/City and Postal Code
 		addressCity = this.arr_SuburbAndPostCodes[rNum][0];	
 		addressPostCode = this.arr_SuburbAndPostCodes[rNum][1];	
+		addressState = this.arr_SuburbAndPostCodes[rNum][2];	
 		
 		age = myRandom.nextInt(75); // refresh value for age
 		if (age <18) {age = 18;}
@@ -105,6 +106,10 @@ public class averagePerson {
 	public String getCity() {
 		return addressCity;
 	}// end method getCity
+	
+	public String getState() {
+		return addressState;
+	}	
 	
 	public String getPostCode() {
 		return addressPostCode;
@@ -170,6 +175,35 @@ public class averagePerson {
 		this.arr_SuburbAndPostCodes[22][1] = "3174";
 		this.arr_SuburbAndPostCodes[23][1] = "2026";
 		this.arr_SuburbAndPostCodes[24][1] = "5006";
+		
+		
+		this.arr_SuburbAndPostCodes[0][2] = "VIC";
+		this.arr_SuburbAndPostCodes[1][2] = "VIC";
+		this.arr_SuburbAndPostCodes[2][2] = "VIC";
+		this.arr_SuburbAndPostCodes[3][2] = "VIC";
+		this.arr_SuburbAndPostCodes[4][2] = "VIC";
+		this.arr_SuburbAndPostCodes[5][2] = "VIC";
+		this.arr_SuburbAndPostCodes[5][2] = "VIC";
+		this.arr_SuburbAndPostCodes[6][2] = "VIC";
+		this.arr_SuburbAndPostCodes[7][2] = "WA";
+		this.arr_SuburbAndPostCodes[8][2] = "WA";
+		this.arr_SuburbAndPostCodes[8][2] = "WA";
+		this.arr_SuburbAndPostCodes[9][2] = "WA";
+		this.arr_SuburbAndPostCodes[10][2] = "WA";
+		this.arr_SuburbAndPostCodes[11][2] = "WA";
+		this.arr_SuburbAndPostCodes[12][2] = "WA";
+		this.arr_SuburbAndPostCodes[13][2] = "WA";
+		this.arr_SuburbAndPostCodes[14][2] = "NSW";
+		this.arr_SuburbAndPostCodes[15][2] = "NSW";
+		this.arr_SuburbAndPostCodes[16][2] = "NSW";
+		this.arr_SuburbAndPostCodes[17][2] = "NSW";
+		this.arr_SuburbAndPostCodes[18][2] = "NSW";
+		this.arr_SuburbAndPostCodes[19][2] = "NSW";
+		this.arr_SuburbAndPostCodes[20][2] = "NSW";
+		this.arr_SuburbAndPostCodes[21][2] = "VIC";
+		this.arr_SuburbAndPostCodes[22][2] = "VIC";
+		this.arr_SuburbAndPostCodes[23][2] = "NSW";
+		this.arr_SuburbAndPostCodes[24][2] = "SA";
 		
 	} // end method populate_SuburbsAndPostCodes
 		
